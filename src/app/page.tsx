@@ -17,9 +17,11 @@ import {
   Heart,
   Search,
   Filter,
-  Globe,
   Award,
-  Camera
+  Camera,
+  Zap,
+  Flag,
+  Target
 } from "lucide-react";
 
 // Horse Head Logo SVG
@@ -38,67 +40,89 @@ const translations = {
   kk: {
     nav: {
       features: "Мүмкіндіктер",
+      sports: "Спорт түрлері",
       services: "Қызметтер",
       download: "Жүктеу",
       contact: "Байланыс"
     },
     hero: {
-      badge: "Қазақстандағы #1 Көкпар қосымшасы",
-      title1: "Көкпар әлеміне",
+      badge: "Қазақстандағы #1 Ат спорты қосымшасы",
+      title1: "Ат спорты әлеміне",
       title2: "қош келдіңіз!",
-      description: "AtSport - көкпар іс-шараларын табыңыз, жылқы сатыңыз және сатып алыңыз, коневозка, атбегі және басқа қызметтерді оңай пайдаланыңыз.",
+      subtitle: "At (лошадь) + Sport = AtSport",
+      description: "AtSport - барлық ат спорты түрлері бір қосымшада. Көкпар, байга және басқа да ат спорты іс-шараларын табыңыз, жылқы сатыңыз және сатып алыңыз, қызметтерді оңай пайдаланыңыз.",
       downloadOn: "Жүктеу",
       users: "Пайдаланушылар",
       events: "Іс-шаралар",
       rating: "Рейтинг",
       learnMore: "Толығырақ"
     },
+    sports: {
+      badge: "Спорт түрлері",
+      title: "Бірінші болып іске қосылады",
+      description: "Көкпар мен байга - біздің алғашқы іске қосатын спорт түрлеріміз. Жақын арада барлық ат спорты түрлерін қосамыз!",
+      kokpar: {
+        title: "Көкпар",
+        description: "Көкпар - қазақтың ұлттық ат ойыны. Іс-шараларды табыңыз, қатысыңыз, жеңімпаздарды бақылаңыз.",
+        status: "Қазір қолжетімді"
+      },
+      baiga: {
+        title: "Байга",
+        description: "Байга - қазақтың дәстүрлі ат жарысы. Жарыстарды табыңыз, атыңызды тіркеңіз, нәтижелерді көріңіз.",
+        status: "Қазір қолжетімді"
+      },
+      coming: {
+        title: "Жақында",
+        description: "Аударыспақ, теңге алу, қыз қуу, жорға жарыс және басқа да ат спорты түрлері жақын арада қосылады.",
+        items: ["Аударыспақ", "Теңге алу", "Қыз қуу", "Жорға жарыс", "Құнан байга"]
+      }
+    },
     features: {
       badge: "Негізгі мүмкіндіктер",
       title: "Бір қосымшада барлығы",
-      description: "AtSport көкпар әлемімен байланыстырады. Іс-шаралар, жылқы сатылымы, қызметтер және тағы басқа мүмкіндіктер.",
+      description: "AtSport ат спорты әлемімен байланыстырады. Іс-шаралар, жылқы сатылымы, қызметтер және тағы басқа мүмкіндіктер.",
       items: [
-        { title: "Көкпар іс-шаралары", description: "Қала, күн, жүлде қоры, ұйымдастырушының байланыс деректері. Видео шақырту жүктеу мүмкіндігі." },
+        { title: "Ат спорты іс-шаралары", description: "Көкпар, байга және басқа да ат спорты іс-шаралары. Қала, күн, жүлде қоры, ұйымдастырушының деректері." },
         { title: "Жылқы сату", description: "Фото, видео, бойы, жасы, бағасы, қала. Толық ақпаратпен жылқыларды қарау және сату." },
-        { title: "Той басшы", description: "Көкпар жүргізетін тамада. Бағасы, бос күндері, фото және видеолары." },
+        { title: "Той басшы", description: "Көкпар мен байга жүргізетін тамада. Бағасы, бос күндері, фото және видеолары." },
         { title: "Коневозка", description: "Ат тасымалын іздеу, өз ұсынысын қою, қалаға байланысты баға ұсыну." },
         { title: "Атбегі", description: "Әр қаланың ат бағатын адамдары, рейтингі мен бағасы. Өзін тіркеу мүмкіндігі." },
         { title: "Ат мінгізу", description: "Белгілі сағатта өз бағасын ұсынып, ат мінгізіп беретін адамдар." },
         { title: "Ат әбзелдері", description: "Ат абзелдерін сататын дүкендер тізімі. Заттардың фотосын жүктеу мүмкіндігі." },
-        { title: "Көкпаршы палуандар", description: "Көкпарға аты жоқ палуандар үшін ат ұсыныстары. Ат иелері өз аттарын ұсына алады." },
+        { title: "Палуандар", description: "Көкпар мен байгаға аты жоқ палуандар үшін ат ұсыныстары." },
         { title: "Денниктер", description: "Қорасы бар адамдар өз ұсынысын беріп, қорасын жалға беру мүмкіндігі." }
       ]
     },
     functionality: {
       badge: "Қосымша функционал",
       title: "Ыңғайлы және қарапайым",
-      description: "AtSport қосымшасы сізге көкпар әлемін зерттеуді жеңілдетеді. Барлық қажетті функциялар бір жерде.",
+      description: "AtSport қосымшасы сізге ат спорты әлемін зерттеуді жеңілдетеді. Барлық қажетті функциялар бір жерде.",
       items: [
         { title: "Телефон арқылы авторизация", description: "Жылдам және қауіпсіз кіру" },
-        { title: "Лента + фильтрлер", description: "Қала, категория бойынша іздеу" },
+        { title: "Лента + фильтрлер", description: "Қала, категория, спорт түрі бойынша іздеу" },
         { title: "Пайдаланушы профилі", description: "Өз хабарламаларын басқару" },
         { title: "Таңдаулылар", description: "Ұнаған хабарламаларды сақтау" }
       ],
-      phone1: { title: "Көкпар іс-шаралары", subtitle: "Таңдаңыз және қатысыңыз", event: "Алматы көкпары", date: "15 желтоқсан", prize: "Жүлде: ₸1,500,000", more: "Толығырақ →" },
+      phone1: { title: "Ат спорты", subtitle: "Көкпар мен Байга", event: "Алматы көкпары", date: "15 желтоқсан", prize: "Жүлде: ₸1,500,000", more: "Толығырақ →" },
       phone2: { title: "Жылқы сату", horse1: { name: "Ақбоз", age: "5 жас", price: "₸2,500,000" }, horse2: { name: "Торы ат", age: "4 жас", price: "₸1,800,000" } }
     },
     download: {
       badge: "iOS & Android",
       title: "Қазір жүктеңіз!",
-      description: "AtSport қосымшасын жүктеп, көкпар әлеміне қосылыңыз. Іс-шаралар, жылқылар, қызметтер - барлығы бір жерде.",
+      description: "AtSport қосымшасын жүктеп, ат спорты әлеміне қосылыңыз. Көкпар, байга, іс-шаралар, жылқылар, қызметтер - барлығы бір жерде.",
       free: "Тегін жүктеу. Қазақстан бойынша қолжетімді."
     },
     testimonials: {
       title: "Пайдаланушылар пікірлері",
       subtitle: "Мыңдаған адамдар AtSport қосымшасын пайдаланады",
       items: [
-        { name: "Ержан Қ.", location: "Алматы", text: "Көкпар іс-шараларын табу өте оңай болды. Енді барлық ақпарат бір жерде!" },
+        { name: "Ержан Қ.", location: "Алматы", text: "Көкпар мен байга іс-шараларын табу өте оңай болды. Енді барлық ақпарат бір жерде!" },
         { name: "Болат М.", location: "Астана", text: "Жылқымды сатуға орналастырдым, бірнеше күнде сатып алушы тапты. Керемет қосымша!" },
-        { name: "Айдос С.", location: "Шымкент", text: "Коневозка қызметін іздеп жүргенмін, осы қосымша арқылы тез таптым." }
+        { name: "Айдос С.", location: "Шымкент", text: "Байгаға қатысу үшін барлық ақпаратты осы қосымшадан таптым. Өте ыңғайлы!" }
       ]
     },
     footer: {
-      description: "Қазақстанның бірінші көкпар қосымшасы. Көкпар іс-шаралары, жылқы сатылымы, қызметтер және тағы басқалары.",
+      description: "Қазақстанның бірінші ат спорты қосымшасы. Көкпар, байга және барлық ат спорты түрлері, жылқы сатылымы, қызметтер.",
       links: "Сілтемелер",
       privacy: "Құпиялылық саясаты",
       contactTitle: "Байланыс",
@@ -108,79 +132,101 @@ const translations = {
       hello: "Сәлем!",
       search: "Іздеу...",
       kokpar: "Көкпар",
+      baiga: "Байга",
       horses: "Жылқылар",
-      transport: "Коневозка",
-      trainer: "Атбегі",
+      services: "Қызметтер",
       eventsCount: "12 іс-шара",
+      racesCount: "8 жарыс",
       adsCount: "48 хабарлама",
-      servicesCount: "15 қызмет",
-      specialistsCount: "8 маман"
+      servicesCount: "15 қызмет"
     }
   },
   ru: {
     nav: {
       features: "Возможности",
+      sports: "Виды спорта",
       services: "Услуги",
       download: "Скачать",
       contact: "Контакты"
     },
     hero: {
-      badge: "#1 Кокпар приложение в Казахстане",
+      badge: "#1 Приложение конного спорта в Казахстане",
       title1: "Добро пожаловать",
-      title2: "в мир кокпара!",
-      description: "AtSport - находите мероприятия кокпара, продавайте и покупайте лошадей, легко пользуйтесь услугами коневозки, атбеги и другими.",
+      title2: "в мир конного спорта!",
+      subtitle: "At (лошадь) + Sport = AtSport",
+      description: "AtSport - все виды конного спорта в одном приложении. Находите мероприятия кокпара, байги и других видов конного спорта, продавайте и покупайте лошадей, пользуйтесь услугами.",
       downloadOn: "Скачать",
       users: "Пользователи",
       events: "Мероприятия",
       rating: "Рейтинг",
       learnMore: "Подробнее"
     },
+    sports: {
+      badge: "Виды спорта",
+      title: "Первыми запускаются",
+      description: "Кокпар и байга - наши первые виды спорта. Скоро добавим все виды конного спорта!",
+      kokpar: {
+        title: "Кокпар",
+        description: "Кокпар - казахская национальная конная игра. Находите мероприятия, участвуйте, следите за победителями.",
+        status: "Уже доступно"
+      },
+      baiga: {
+        title: "Байга",
+        description: "Байга - традиционные казахские скачки. Находите соревнования, регистрируйте лошадей, смотрите результаты.",
+        status: "Уже доступно"
+      },
+      coming: {
+        title: "Скоро",
+        description: "Аударыспак, тенге алу, кыз куу, жорга жарыс и другие виды конного спорта будут добавлены в ближайшее время.",
+        items: ["Аударыспак", "Тенге алу", "Кыз куу", "Жорга жарыс", "Кунан байга"]
+      }
+    },
     features: {
       badge: "Основные возможности",
       title: "Всё в одном приложении",
-      description: "AtSport связывает вас с миром кокпара. Мероприятия, продажа лошадей, услуги и многое другое.",
+      description: "AtSport связывает вас с миром конного спорта. Мероприятия, продажа лошадей, услуги и многое другое.",
       items: [
-        { title: "Мероприятия кокпара", description: "Город, дата, призовой фонд, контакты организатора. Возможность загрузки видео-приглашения." },
+        { title: "Мероприятия конного спорта", description: "Кокпар, байга и другие мероприятия конного спорта. Город, дата, призовой фонд, контакты организатора." },
         { title: "Продажа лошадей", description: "Фото, видео, рост, возраст, цена, город. Просмотр и продажа лошадей с полной информацией." },
-        { title: "Той басшы", description: "Ведущий кокпара. Цена, свободные дни, фото и видео." },
+        { title: "Той басшы", description: "Ведущий кокпара и байги. Цена, свободные дни, фото и видео." },
         { title: "Коневозка", description: "Поиск перевозки лошадей, размещение своего предложения, цена в зависимости от города." },
         { title: "Атбеги", description: "Тренеры лошадей каждого города, их рейтинг и цены. Возможность регистрации." },
         { title: "Прокат лошадей", description: "Люди, предлагающие прокат лошадей в определённое время по своей цене." },
         { title: "Снаряжение", description: "Список магазинов конного снаряжения. Возможность загрузки фото товаров." },
-        { title: "Кокпаршы палуаны", description: "Предложения лошадей для палуанов без своего коня. Владельцы могут предлагать своих лошадей." },
+        { title: "Палуаны", description: "Предложения лошадей для палуанов без своего коня для кокпара и байги." },
         { title: "Денники", description: "Владельцы конюшен могут размещать предложения по аренде." }
       ]
     },
     functionality: {
       badge: "Дополнительный функционал",
       title: "Удобно и просто",
-      description: "Приложение AtSport облегчает изучение мира кокпара. Все необходимые функции в одном месте.",
+      description: "Приложение AtSport облегчает изучение мира конного спорта. Все необходимые функции в одном месте.",
       items: [
         { title: "Авторизация по телефону", description: "Быстрый и безопасный вход" },
-        { title: "Лента + фильтры", description: "Поиск по городу и категории" },
+        { title: "Лента + фильтры", description: "Поиск по городу, категории, виду спорта" },
         { title: "Профиль пользователя", description: "Управление своими объявлениями" },
         { title: "Избранное", description: "Сохранение понравившихся объявлений" }
       ],
-      phone1: { title: "Мероприятия кокпара", subtitle: "Выбирайте и участвуйте", event: "Кокпар в Алматы", date: "15 декабря", prize: "Приз: ₸1,500,000", more: "Подробнее →" },
+      phone1: { title: "Конный спорт", subtitle: "Кокпар и Байга", event: "Кокпар в Алматы", date: "15 декабря", prize: "Приз: ₸1,500,000", more: "Подробнее →" },
       phone2: { title: "Продажа лошадей", horse1: { name: "Акбоз", age: "5 лет", price: "₸2,500,000" }, horse2: { name: "Гнедой", age: "4 года", price: "₸1,800,000" } }
     },
     download: {
       badge: "iOS & Android",
       title: "Скачайте сейчас!",
-      description: "Скачайте приложение AtSport и присоединяйтесь к миру кокпара. Мероприятия, лошади, услуги - всё в одном месте.",
+      description: "Скачайте приложение AtSport и присоединяйтесь к миру конного спорта. Кокпар, байга, мероприятия, лошади, услуги - всё в одном месте.",
       free: "Бесплатно. Доступно по всему Казахстану."
     },
     testimonials: {
       title: "Отзывы пользователей",
       subtitle: "Тысячи людей используют приложение AtSport",
       items: [
-        { name: "Ержан К.", location: "Алматы", text: "Находить мероприятия кокпара стало очень легко. Теперь вся информация в одном месте!" },
+        { name: "Ержан К.", location: "Алматы", text: "Находить мероприятия кокпара и байги стало очень легко. Теперь вся информация в одном месте!" },
         { name: "Болат М.", location: "Астана", text: "Разместил свою лошадь на продажу, через несколько дней нашёл покупателя. Отличное приложение!" },
-        { name: "Айдос С.", location: "Шымкент", text: "Искал услугу коневозки, через это приложение быстро нашёл." }
+        { name: "Айдос С.", location: "Шымкент", text: "Всю информацию для участия в байге нашёл в этом приложении. Очень удобно!" }
       ]
     },
     footer: {
-      description: "Первое кокпар-приложение Казахстана. Мероприятия кокпара, продажа лошадей, услуги и многое другое.",
+      description: "Первое приложение конного спорта Казахстана. Кокпар, байга и все виды конного спорта, продажа лошадей, услуги.",
       links: "Ссылки",
       privacy: "Политика конфиденциальности",
       contactTitle: "Контакты",
@@ -190,13 +236,13 @@ const translations = {
       hello: "Привет!",
       search: "Поиск...",
       kokpar: "Кокпар",
+      baiga: "Байга",
       horses: "Лошади",
-      transport: "Коневозка",
-      trainer: "Атбеги",
+      services: "Услуги",
       eventsCount: "12 событий",
+      racesCount: "8 скачек",
       adsCount: "48 объявлений",
-      servicesCount: "15 услуг",
-      specialistsCount: "8 специалистов"
+      servicesCount: "15 услуг"
     }
   }
 };
@@ -223,10 +269,10 @@ export default function Home() {
               <span className="text-xl font-bold text-gray-900">AtSport</span>
             </div>
             <div className="hidden md:flex items-center space-x-8">
+              <a href="#sports" className="text-gray-600 hover:text-primary-600 transition-colors">{t.nav.sports}</a>
               <a href="#features" className="text-gray-600 hover:text-primary-600 transition-colors">{t.nav.features}</a>
               <a href="#services" className="text-gray-600 hover:text-primary-600 transition-colors">{t.nav.services}</a>
               <a href="#download" className="text-gray-600 hover:text-primary-600 transition-colors">{t.nav.download}</a>
-              <a href="#contact" className="text-gray-600 hover:text-primary-600 transition-colors">{t.nav.contact}</a>
             </div>
             <div className="flex items-center space-x-3">
               {/* Language Switcher */}
@@ -276,10 +322,14 @@ export default function Home() {
                 <span>{t.hero.badge}</span>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4">
                 {t.hero.title1}
                 <span className="text-gradient block">{t.hero.title2}</span>
               </h1>
+
+              <p className="text-lg text-primary-600 font-medium mb-4">
+                {t.hero.subtitle}
+              </p>
 
               <p className="text-lg text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0">
                 {t.hero.description}
@@ -372,24 +422,24 @@ export default function Home() {
                         </div>
                         <div className="bg-white rounded-2xl p-4">
                           <div className="w-10 h-10 bg-accent-100 rounded-xl flex items-center justify-center mb-3">
-                            <Camera className="w-5 h-5 text-accent-600" />
+                            <Flag className="w-5 h-5 text-accent-600" />
+                          </div>
+                          <div className="text-sm font-semibold text-gray-900">{t.app.baiga}</div>
+                          <div className="text-xs text-gray-500">{t.app.racesCount}</div>
+                        </div>
+                        <div className="bg-white rounded-2xl p-4">
+                          <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center mb-3">
+                            <Camera className="w-5 h-5 text-blue-600" />
                           </div>
                           <div className="text-sm font-semibold text-gray-900">{t.app.horses}</div>
                           <div className="text-xs text-gray-500">{t.app.adsCount}</div>
                         </div>
                         <div className="bg-white rounded-2xl p-4">
-                          <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center mb-3">
-                            <Truck className="w-5 h-5 text-blue-600" />
-                          </div>
-                          <div className="text-sm font-semibold text-gray-900">{t.app.transport}</div>
-                          <div className="text-xs text-gray-500">{t.app.servicesCount}</div>
-                        </div>
-                        <div className="bg-white rounded-2xl p-4">
                           <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center mb-3">
                             <Star className="w-5 h-5 text-purple-600" />
                           </div>
-                          <div className="text-sm font-semibold text-gray-900">{t.app.trainer}</div>
-                          <div className="text-xs text-gray-500">{t.app.specialistsCount}</div>
+                          <div className="text-sm font-semibold text-gray-900">{t.app.services}</div>
+                          <div className="text-xs text-gray-500">{t.app.servicesCount}</div>
                         </div>
                       </div>
                     </div>
@@ -400,11 +450,11 @@ export default function Home() {
                 <div className="absolute -left-20 top-32 bg-white rounded-2xl p-4 shadow-xl animate-pulse">
                   <div className="flex items-center space-x-3">
                     <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center">
-                      <MapPin className="w-6 h-6 text-primary-600" />
+                      <Trophy className="w-6 h-6 text-primary-600" />
                     </div>
                     <div>
-                      <div className="text-sm font-semibold">{lang === 'kk' ? 'Алматы' : 'Алматы'}</div>
-                      <div className="text-xs text-gray-500">{lang === 'kk' ? '5 көкпар' : '5 кокпаров'}</div>
+                      <div className="text-sm font-semibold">{lang === 'kk' ? 'Көкпар' : 'Кокпар'}</div>
+                      <div className="text-xs text-gray-500">{lang === 'kk' ? '12 іс-шара' : '12 событий'}</div>
                     </div>
                   </div>
                 </div>
@@ -412,11 +462,11 @@ export default function Home() {
                 <div className="absolute -right-16 bottom-40 bg-white rounded-2xl p-4 shadow-xl">
                   <div className="flex items-center space-x-3">
                     <div className="w-12 h-12 bg-accent-100 rounded-xl flex items-center justify-center">
-                      <Trophy className="w-6 h-6 text-accent-600" />
+                      <Flag className="w-6 h-6 text-accent-600" />
                     </div>
                     <div>
-                      <div className="text-sm font-semibold">₸2,000,000</div>
-                      <div className="text-xs text-gray-500">{lang === 'kk' ? 'Жүлде қоры' : 'Призовой фонд'}</div>
+                      <div className="text-sm font-semibold">{lang === 'kk' ? 'Байга' : 'Байга'}</div>
+                      <div className="text-xs text-gray-500">{lang === 'kk' ? '8 жарыс' : '8 скачек'}</div>
                     </div>
                   </div>
                 </div>
@@ -426,10 +476,79 @@ export default function Home() {
 
           {/* Scroll indicator */}
           <div className="flex justify-center mt-12">
-            <a href="#features" className="flex flex-col items-center text-gray-400 hover:text-primary-600 transition-colors">
+            <a href="#sports" className="flex flex-col items-center text-gray-400 hover:text-primary-600 transition-colors">
               <span className="text-sm mb-2">{t.hero.learnMore}</span>
               <ChevronDown className="w-6 h-6 animate-bounce" />
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Sports Section - NEW */}
+      <section id="sports" className="py-20 px-4 bg-gradient-to-b from-white to-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center space-x-2 bg-accent-100 text-accent-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
+              <Zap className="w-4 h-4" />
+              <span>{t.sports.badge}</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              {t.sports.title}
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              {t.sports.description}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Kokpar Card */}
+            <div className="bg-white rounded-3xl p-8 shadow-xl border-2 border-primary-200 relative overflow-hidden">
+              <div className="absolute top-4 right-4">
+                <span className="bg-primary-100 text-primary-700 text-xs font-semibold px-3 py-1 rounded-full">
+                  {t.sports.kokpar.status}
+                </span>
+              </div>
+              <div className="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mb-6">
+                <Trophy className="w-8 h-8 text-primary-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">{t.sports.kokpar.title}</h3>
+              <p className="text-gray-600">{t.sports.kokpar.description}</p>
+            </div>
+
+            {/* Baiga Card */}
+            <div className="bg-white rounded-3xl p-8 shadow-xl border-2 border-accent-200 relative overflow-hidden">
+              <div className="absolute top-4 right-4">
+                <span className="bg-accent-100 text-accent-700 text-xs font-semibold px-3 py-1 rounded-full">
+                  {t.sports.baiga.status}
+                </span>
+              </div>
+              <div className="w-16 h-16 bg-accent-100 rounded-2xl flex items-center justify-center mb-6">
+                <Flag className="w-8 h-8 text-accent-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">{t.sports.baiga.title}</h3>
+              <p className="text-gray-600">{t.sports.baiga.description}</p>
+            </div>
+
+            {/* Coming Soon Card */}
+            <div className="bg-gradient-to-br from-gray-100 to-gray-50 rounded-3xl p-8 border-2 border-dashed border-gray-300 relative overflow-hidden">
+              <div className="absolute top-4 right-4">
+                <span className="bg-gray-200 text-gray-600 text-xs font-semibold px-3 py-1 rounded-full">
+                  {t.sports.coming.title}
+                </span>
+              </div>
+              <div className="w-16 h-16 bg-gray-200 rounded-2xl flex items-center justify-center mb-6">
+                <Target className="w-8 h-8 text-gray-500" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">{t.sports.coming.title}</h3>
+              <p className="text-gray-600 mb-4">{t.sports.coming.description}</p>
+              <div className="flex flex-wrap gap-2">
+                {t.sports.coming.items.map((item, index) => (
+                  <span key={index} className="bg-white text-gray-600 text-xs px-3 py-1 rounded-full border border-gray-200">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -550,7 +669,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Second phone (offset) - FIXED */}
+                {/* Second phone (offset) */}
                 <div className="absolute -right-12 top-20 w-56 h-[440px] bg-gray-900 rounded-[2rem] p-2 shadow-2xl rotate-6">
                   <div className="absolute top-5 left-1/2 -translate-x-1/2 w-16 h-4 bg-gray-900 rounded-full z-10" />
                   <div className="w-full h-full bg-white rounded-[1.7rem] overflow-hidden">
@@ -698,6 +817,9 @@ export default function Home() {
                 </div>
                 <span className="text-2xl font-bold">AtSport</span>
               </div>
+              <p className="text-gray-400 mb-4">
+                <span className="text-primary-400 font-medium">At</span> ({lang === 'kk' ? 'лошадь' : 'лошадь'}) + <span className="text-primary-400 font-medium">Sport</span> = AtSport
+              </p>
               <p className="text-gray-400 mb-6 max-w-md">
                 {t.footer.description}
               </p>
@@ -724,6 +846,7 @@ export default function Home() {
             <div>
               <h3 className="font-semibold text-lg mb-6">{t.footer.links}</h3>
               <ul className="space-y-3">
+                <li><a href="#sports" className="text-gray-400 hover:text-white transition-colors">{t.nav.sports}</a></li>
                 <li><a href="#features" className="text-gray-400 hover:text-white transition-colors">{t.nav.features}</a></li>
                 <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">{t.nav.services}</a></li>
                 <li><a href="#download" className="text-gray-400 hover:text-white transition-colors">{t.nav.download}</a></li>
