@@ -327,10 +327,6 @@ export default function Home() {
                 <span className="text-gradient block">{t.hero.title2}</span>
               </h1>
 
-              <p className="text-lg text-primary-600 font-medium mb-4">
-                {t.hero.subtitle}
-              </p>
-
               <p className="text-lg text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0">
                 {t.hero.description}
               </p>
@@ -817,9 +813,6 @@ export default function Home() {
                 </div>
                 <span className="text-2xl font-bold">AtSport</span>
               </div>
-              <p className="text-gray-400 mb-4">
-                <span className="text-primary-400 font-medium">At</span> ({lang === 'kk' ? 'лошадь' : 'лошадь'}) + <span className="text-primary-400 font-medium">Sport</span> = AtSport
-              </p>
               <p className="text-gray-400 mb-6 max-w-md">
                 {t.footer.description}
               </p>
